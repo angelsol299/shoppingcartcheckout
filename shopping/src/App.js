@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Grid } from "react-bootstrap";
 import Subtotal from "./components/Subtotal/Subtotal";
+import PickupSavins from "./components/PickupSavings/PickupSavings";
 
 import "./App.css";
 
@@ -9,7 +10,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      total: 100
+      total: 100,
+      PickupSavings: -3.85
     };
   }
   render() {
@@ -17,6 +19,7 @@ class App extends Component {
       <div className="container">
         <Grid className="purchase-card">
           <Subtotal price={this.state.total.toFixed(2)} />
+          <PickupSavins price={this.state.PickupSavings} />
         </Grid>
       </div>
     );
